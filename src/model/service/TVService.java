@@ -16,6 +16,16 @@ public class TVService implements TVServiceIXWrite, TVServiceIXRead {
     }
 
     @Override
+    public void delete(Long id) {
+        tvdaoixWrite.delete(id);
+    }
+
+    @Override
+    public void update(TV tvToUpdate) {
+        tvdaoixWrite.update(tvToUpdate);
+    }
+
+    @Override
     public List<TV> findAll() {
         List<TV> tvList = tvdaoixRead.findAll();
         return tvList;

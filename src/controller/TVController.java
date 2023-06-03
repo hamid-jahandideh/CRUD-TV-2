@@ -15,6 +15,14 @@ public class TVController {
         tvServiceIXWrite.save(tv);
     }
 
+    public void delete(Long id) {
+        tvServiceIXWrite.delete(id);
+    }
+
+    public void update(TV tvToUpdate) {
+        tvServiceIXWrite.update(tvToUpdate);
+    }
+
     public List<TV> findAll(){
         List<TV> all = tvServiceIXRead.findAll();
         return all;
@@ -24,5 +32,4 @@ public class TVController {
         TV tv = tvServiceIXRead.findById(id);
         return tv;
     }
-
 }

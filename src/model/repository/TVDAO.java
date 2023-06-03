@@ -11,6 +11,25 @@ public class TVDAO implements TVDAOIXWrite, TVDAOIXRead{
         tvList.add(tv);
     }
 
+    @Override
+    public void delete(Long id) {
+        TV foundInDB = findById(id);
+        tvList.remove(foundInDB);
+    }
+
+    @Override
+    public void update(TV tvToUpdate) {
+        for (TV tvInDB : tvList) {
+            if (tvInDB.getId() == tvToUpdate.getId()) {
+                tvInDB.setTvMark(tvToUpdate.getTvMark());
+                tvInDB.setTvModel(tvToUpdate.getTvModel());
+                tvInDB.setTvWidth(tvToUpdate.getTvWidth());
+                tvInDB.setTvHeight(tvToUpdate.getTvHeight());
+                break;
+            }
+        }
+    }
+
 
     @Override
     public List<TV> findAll() {
