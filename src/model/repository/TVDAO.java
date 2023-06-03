@@ -19,6 +19,13 @@ public class TVDAO implements TVDAOIXWrite, TVDAOIXRead{
 
     @Override
     public TV findById(Long id) {
-        return null;
+        TV tvFoundInList = null;
+        for (TV tv : tvList) {
+            if (tv.getId() == id) {
+                tvFoundInList = tv;
+                break;
+            }
+        }
+        return tvFoundInList;
     }
 }

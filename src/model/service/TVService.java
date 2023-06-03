@@ -20,4 +20,9 @@ public class TVService implements TVServiceIXWrite, TVServiceIXRead {
         List<TV> tvList = tvdaoixRead.findAll();
         return tvList;
     }
+
+    public TV findById(Long id) {
+        TV tv = tvdaoixRead.findById(id);
+        return tv;
+    }
 }

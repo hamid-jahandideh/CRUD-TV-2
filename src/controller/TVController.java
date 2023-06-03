@@ -20,4 +20,9 @@ public class TVController {
         return all;
     }
 
+    public TV findById(Long id) {
+        TV tv = tvServiceIXRead.findById(id);
+        return tv;
+    }
+
 }
