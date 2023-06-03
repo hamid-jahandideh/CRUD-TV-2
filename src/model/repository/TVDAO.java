@@ -16,4 +16,9 @@ public class TVDAO implements TVDAOIXWrite, TVDAOIXRead{
     public List<TV> findAll() {
         return tvList;
     }
+
+    @Override
+    public TV findById(Long id) {
+        return null;
+    }
 }
